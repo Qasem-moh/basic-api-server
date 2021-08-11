@@ -21,7 +21,7 @@ async function getFood(req, res) {
 }
 
 async function getOneFood(req, res) {
-    const id = parseInt(req.params.id); // req.params is an object 
+    const id = parseInt(req.params.id); 
     let food = await Food.findOne({ where: {id: id} });
     res.status(200).json(food);
 }
@@ -35,9 +35,7 @@ async function createFood(req, res) {
 async function updateFood(req, res) {
     let id = parseInt(req.params.id);
     let obj = req.body;
-    // find the person
     let found = await Food.findOne({ where: {id: id} });
-    // update the person + save
     let updatedFood = await found.update(obj);
     res.status(200).json(updatedFood);
 }

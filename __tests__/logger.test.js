@@ -1,7 +1,7 @@
 // jest.spyOn
 // the thing that i'm spying on : expect(XX).toHaveBeenCalled()
 
-const logger = require('../middlewares/logger');
+const logger = require('../src/middlewares/logger');
 describe('logger middleware', ()=> {
    
     let consoleSpy; 

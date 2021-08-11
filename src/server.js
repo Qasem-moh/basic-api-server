@@ -1,8 +1,8 @@
 'use strict';
 
 const express = require('express');
-const notFoundHandler = require('./error - handlers/404');
-const errorHandler = require('./error - handlers/500');
+const notFoundHandler = require('./errorHandlers/404');
+const errorHandler = require('./errorHandlers/500');
 const logger = require('./middlewares/logger');
 const peopleRoutes = require('./routes/food');
 const app = express();
