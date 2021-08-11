@@ -1,5 +1,5 @@
 'use strict';
-const server = require('../src/server');
+const server = require('../server');
 // I do not have to run it
 const supertest = require('supertest');
 const request = supertest(server.app);
@@ -17,6 +17,9 @@ describe('my API Server', () => {
         const response = await request.get('/asd'); // async
         expect(response.status).toEqual(404);
     });
+
+    //  1. callbacks ---> Promises (Promise.then() ) ----> Async/Await
+
     it('handles my internal server errors', async () => {
         const response = await request.post('/bad'); // async
         expect(response.status).toEqual(500);
@@ -32,6 +35,6 @@ describe('my API Server', () => {
         const response = await request.get('/'); // async
         expect(response.status).toEqual(200);
         console.log(response.text);
-        expect(response.text).toEqual({});
+        expect(response.text).toEqual('this is home page!!! :D :D :D');
     });
 });

@@ -1,13 +1,14 @@
 'use strict';
-
-const POSTGRES_URI = "postgres://localhost:5432/testing";
+const POSTGRES_URI =  process.env.DATABASE_URI || "postgres://localhost:5432/qasem";
 const { Sequelize, DataTypes } = require('sequelize');
-const Food = require('./Food.model');
 
-let sequelize = new Sequelize(POSTGRES_URI, {});
+let sequelizeOptions = {};
+let sequelize = new Sequelize(POSTGRES_URI, sequelizeOptions);
 
-// lets define our Schema
+// our schema definitions
+const food = require('./food.model.js');
+
 module.exports = {
-    Food: Food(sequelize, DataTypes),
-    db: sequelize
-}
+  db: sequelize,
+  Food: food(sequelize, DataTypes),
+};
