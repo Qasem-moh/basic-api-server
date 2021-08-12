@@ -13,7 +13,7 @@ app.use(logger);
 app.use(peopleRoutes);
 
 function start(port) {
-    app.listen(port, ()=> console.log(`Running on Port ${port}`))
+    app.listen(port, ()=> console.log(`Server is Running on Port ${port}`))
 }
 
 app.use('*', notFoundHandler);
