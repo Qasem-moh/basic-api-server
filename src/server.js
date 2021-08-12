@@ -16,6 +16,11 @@ function start(port) {
     app.listen(port, ()=> console.log(`Server is Running on Port ${port}`))
 }
 
+// Home Page Route
+app.get('/', (req, res) => {
+    res.status(200).send('Home');
+});
+
 app.use('*', notFoundHandler);
 app.use(errorHandler);
 
