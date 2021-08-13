@@ -1,19 +1,22 @@
 'use strict';
-
+// 1st level packages -> we did not install anything
+// 3rd party packages
 const express = require('express');
-const notFoundHandler = require('./errorHandlers/404');
-const errorHandler = require('./errorHandlers/500');
-const logger = require('./middlewares/logger');
-const peopleRoutes = require('./routes/food');
+// local modules
+const notFoundHandler = require('../src/error-handlers/404');
+const errorHandler = require('../src/error-handlers/500');
+const logger = require('../src/middleware/logger');
+const foodRoutes = require('./routes/food'); //fixroute
 const app = express();
-
-app.use(express.json()); 
-
+// Global Middlewares
+app.use(express.json()); // access the body
+// app.use(cors()); install the package
 app.use(logger);
-app.use(peopleRoutes);
+// Use our routes form the routing module -> people
+app.use(foodRoutes);
 
 function start(port) {
-    app.listen(port, ()=> console.log(`Running on Port ${port}`))
+    app.listen(port, () => console.log(`Server Is Running on Port ${port}`))
 }
 
 app.use('*', notFoundHandler);

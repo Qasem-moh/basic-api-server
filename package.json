@@ -1,7 +1,7 @@
 {
-  "name": "basic-api-server",
+  "name": "api-server",
   "version": "1.0.0",
-  "description": "Dynamic API Phase 2: Perform CRUD Operations on a database",
+  "description": "Dynamic API Phase 3: Add Database Abstraction and Associations to your API",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage --verbose",
@@ -9,24 +9,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Qasem-moh/basic-api-server.git"
+    "url": "git+https://github.com/Qasem-moh/api-server.git"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Qasem-moh/basic-api-server/issues"
+    "url": "https://github.com/Qasem-moh/api-server/issues"
   },
-  "homepage": "https://github.com/Qasem-moh/basic-api-server#readme",
+  "homepage": "https://github.com/Qasem-moh/api-server#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "pg": "^8.7.1",
     "sequelize": "^6.6.5",
-    "sqlite3": "^4.2.0"
+    "sequelize-cli": "^6.2.0",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "jest": "^27.0.6",
-    "supertest": "^6.1.4"
+    "supertest": "^6.1.5"
   }
 }
