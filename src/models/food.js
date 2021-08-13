@@ -8,7 +8,6 @@ const Food = (sequelize, DataTypes) => sequelize.define('food', {
     typefood: {
         type: DataTypes.STRING,
     }
-  
 });
 
 module.exports = Food;

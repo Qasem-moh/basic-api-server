@@ -16,7 +16,7 @@ app.use(logger);
 app.use(foodRoutes);
 
 function start(port) {
-    app.listen(port, ()=> console.log(`Running on Port ${port}`))
+    app.listen(port, () => console.log(`Server Is Running on Port ${port}`))
 }
 
 app.use('*', notFoundHandler);

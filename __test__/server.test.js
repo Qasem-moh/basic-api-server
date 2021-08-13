@@ -5,12 +5,14 @@ const supertest = require('supertest');
 const request = supertest(server.app);
 
 let obj = {
-    id:1,
-    foodtype :"hi fowod"
-}
-describe('my Server', ()=> {
+    id: 1,
+    name: "KAKA",
+    typefood:"fruite"
 
-    beforeEach(()=> {
+}
+describe('my Server', () => {
+
+    beforeEach(() => {
         jest.spyOn(console, 'log').mockImplementation();
     })
 
@@ -26,10 +28,10 @@ describe('my Server', ()=> {
         expect(response.status).toEqual(404);
     });
 
-   
-    
+
+
     it('Create a record using POST', async () => {
-        
+
 
         const response = await request.post('/food').send(obj);
         expect(response.status).toEqual(200);
@@ -58,8 +60,8 @@ describe('my Server', ()=> {
         const response = await request.delete('/food/1');
         expect(response.status).toEqual(204);
     });
-   
-   
+
+
 
 
 });

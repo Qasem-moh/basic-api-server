@@ -1,3 +1,4 @@
+
 'use strict';
 
 const clothes = (sequalize, DataTypes) => {
@@ -5,8 +6,8 @@ const clothes = (sequalize, DataTypes) => {
         clothesType: {
             type: DataTypes.STRING,
             allowNull: false
-        }, 
-     
+        },
+
     });
 }
 
